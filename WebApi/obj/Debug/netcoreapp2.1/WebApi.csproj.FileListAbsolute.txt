@@ -1,0 +1,14 @@
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.deps.json
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.runtimeconfig.json
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.runtimeconfig.dev.json
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.dll
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.csprojAssemblyReference.cache
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorAssemblyInfo.cache
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorAssemblyInfo.cs
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.AssemblyInfo.cs
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.pdb
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.dll
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.pdb
