@@ -22,3 +22,10 @@ namespace WebApi
                 .UseStartup<Startup>();
     }
 }
+
+
+///Notes
+/*
+  Para integrar la interfaz de swagger
+   >>>> Install-Package NSwag.AspNetCore
+ */

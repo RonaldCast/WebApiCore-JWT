@@ -15,6 +15,8 @@ using WebApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using NSwag;
+using NSwag.Generation.Processors.Security;
 
 namespace WebApi
 {
@@ -47,11 +49,34 @@ namespace WebApi
                 };
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<WebApiContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("WebApiContext")));
+
+            // REGISTRAMOS SWAGGER COMO SERVICIO
+
+            services.AddOpenApiDocument(document =>
+            {
+                document.Title = "Api country";
+                document.Description = "About the history of the country";
+
+                //CONFIGURAMOS la seguridad JWT PARA SWAGGER,
+                // PERMITE AÑADIR EL TOKEN JWT A LA CABECERA.
+                document.AddSecurity("JWT", Enumerable.Empty<string>(), 
+                       new NSwag.OpenApiSecurityScheme
+                       {
+                           Type = OpenApiSecuritySchemeType.ApiKey,
+                           Name = "Authorization",
+                           In = OpenApiSecurityApiKeyLocation.Header,
+                           Description = "Copia y pega el Token en el campo 'Value:' así: Bearer {Token JWT}."
+                       }
+                    );
+
+                document.OperationProcessors.Add(
+                    new AspNetCoreOperationSecurityScopeProcessor("JWT"));
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,6 +93,11 @@ namespace WebApi
 
             app.UseHttpsRedirection();
             app.UseAuthentication(); // para vigilar la peticion entrante
+
+            // AÑADIMOS EL MIDDLEWARE DE SWAGGER (NSwag)
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+
             app.UseMvc();
         }
     }
