@@ -58,9 +58,13 @@ namespace WebApi
 
             services.AddOpenApiDocument(document =>
             {
+                document.Version = "v1";
                 document.Title = "Api country";
                 document.Description = "About the history of the country";
-
+                document.DocumentName = "First";
+       
+                
+            
                 //CONFIGURAMOS la seguridad JWT PARA SWAGGER,
                 // PERMITE AÑADIR EL TOKEN JWT A LA CABECERA.
                 document.AddSecurity("JWT", Enumerable.Empty<string>(), 

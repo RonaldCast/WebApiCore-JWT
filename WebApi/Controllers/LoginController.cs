@@ -10,10 +10,15 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using NSwag.Annotations;
 using WebApi.Models;
 
 namespace WebApi.Controllers
 {
+    [SwaggerTag("Login",
+                Description = "Web API para autenticación de Usuarios.",
+                DocumentationDescription = "Documentación externa",
+                DocumentationUrl = "http://comingsoon")]
     [Route("api/[controller]")]
     [ApiController]
     public class LoginController : ControllerBase

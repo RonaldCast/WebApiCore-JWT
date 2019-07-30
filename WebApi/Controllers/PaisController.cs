@@ -6,10 +6,15 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NSwag.Annotations;
 using WebApi.Models;
 
 namespace WebApi.Controllers
 {
+    [SwaggerTag("Pais",
+       Description = "Web API para mantenimiento de Países.",
+       DocumentationDescription = "Documentación externa",
+       DocumentationUrl = "http://comingsoon")]
     [Route("api/[controller]")]
     [ApiController]
     public class PaisController : ControllerBase
@@ -22,15 +27,34 @@ namespace WebApi.Controllers
         }
 
         // GET: api/Pais
+
         [Authorize]
         [HttpGet]
-        public IEnumerable<Pais> GetPais()
+        public IActionResult GetPais()
         {
-            return _context.Pais;
+            //tiene todo los datos almacenados 
+            var claim = User.Claims.ToList();
+            var  nombre = claim.FirstOrDefault(x => x.Type == "nombre");
+            return Ok(nombre.Value);
         }
 
         // GET: api/Pais/5
+        /// <summary>
+        /// Obtiene un objeto por su Id.
+        /// </summary>
+        /// <remarks>
+        /// Aquí una descripción mas larga si fuera necesario. Obtiene un objeto por su Id.
+        /// </remarks>
+        /// <param name="id">Id (GUID) del objeto</param>
+        /// <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JWT de acceso.</response>
+        /// <reponse code="200">Unauthorized. No se ha indicado o es incorrecto el Token JWT de acceso.</reponse>
+        /// <response code="404">Unauthorized. No se ha indicado o es incorrecto el Token JWT de acceso.</response>
+
         [HttpGet("{id}")]
+        [Authorize]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetPais([FromRoute] Guid id)
         {
             if (!ModelState.IsValid)
@@ -84,6 +108,21 @@ namespace WebApi.Controllers
         }
 
         // POST: api/Pais
+        /// <summary>
+        /// Crea un nuevo objeto en la BD.
+        /// </summary>
+        /// <remarks>
+        /// Aquí una descripción mas larga si fuera necesario. Crea un nuevo objeto en la BD.
+        /// </remarks>
+        /// <param name="pais">Objeto a crear a la BD.</param>
+        /// <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JWT de acceso.</response>              
+        /// <response code="201">Created. Objeto correctamente creado en la BD.</response>        
+        /// <response code="400">BadRequest. No se ha creado el objeto en la BD. Formato del objeto incorrecto.</response>
+        [HttpPost]
+        [Authorize]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
         public async Task<IActionResult> PostPais([FromBody] Pais pais)
         {

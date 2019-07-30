@@ -12,3 +12,4 @@ C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\
 C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.pdb
 C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.dll
 C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.pdb
+C:\Users\DELL\Desktop\Asp.net MVC LOL\JWT\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.xml

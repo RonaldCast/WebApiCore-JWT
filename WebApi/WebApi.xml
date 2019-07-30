@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:WebApi.Controllers.PaisController.GetPais(System.Guid)">
+            <summary>
+            Obtiene un objeto por su Id.
+            </summary>
+            <remarks>
+            Aquí una descripción mas larga si fuera necesario. Obtiene un objeto por su Id.
+            </remarks>
+            <param name="id">Id (GUID) del objeto</param>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JWT de acceso.</response>
+            <reponse code="200">Unauthorized. No se ha indicado o es incorrecto el Token JWT de acceso.</reponse>
+            <response code="404">Unauthorized. No se ha indicado o es incorrecto el Token JWT de acceso.</response>
+        </member>
+        <member name="M:WebApi.Controllers.PaisController.PostPais(WebApi.Models.Pais)">
+            <summary>
+            Crea un nuevo objeto en la BD.
+            </summary>
+            <remarks>
+            Aquí una descripción mas larga si fuera necesario. Crea un nuevo objeto en la BD.
+            </remarks>
+            <param name="pais">Objeto a crear a la BD.</param>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JWT de acceso.</response>              
+            <response code="201">Created. Objeto correctamente creado en la BD.</response>        
+            <response code="400">BadRequest. No se ha creado el objeto en la BD. Formato del objeto incorrecto.</response>
+        </member>
+    </members>
+</doc>

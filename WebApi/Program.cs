@@ -28,4 +28,6 @@ namespace WebApi
 /*
   Para integrar la interfaz de swagger
    >>>> Install-Package NSwag.AspNetCore
+  Atributo para poner los comentarios en los controladores
+  [SwaggerTag( ... )]
  */
